@@ -11,13 +11,12 @@
 
 ## Configure your local environment
 (only for the fist time)
-**0. First Steps:**
 ```
 npm install
 ```
 
 ## Using the local environment
-1. Execute the application:
+1. Execute the application
 ```
 npm start
 ```

@@ -1,0 +1,11 @@
+.task-container ul {
+    display: list-item !important;
+}
+
+.task-container ul li {
+    background: #fff;
+    padding: 0px;
+    border-radius: 0px;
+    position: relative;
+}
+

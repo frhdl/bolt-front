@@ -5,7 +5,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 import './styles.css';
 import logoImg from '../../assets/logo.svg';
 
-import api from '../../services/api';
+import axios from 'axios';
 
 export default function EditProject() {
     const { id } = useParams();
@@ -26,7 +26,7 @@ export default function EditProject() {
         };
 
         try {
-            await api.put('/api/v1/project', data, {
+            await axios.put('/api/project', data, {
                 headers: {
                     Authorization: `bearer ${bearerToken}`,
                 }

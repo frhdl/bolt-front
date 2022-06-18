@@ -6,7 +6,7 @@ import Task from '../Task';
 import './styles.css';
 import logoImg from '../../assets/logo.svg';
 
-import api from '../../services/api';
+import axios from 'axios';
 
 export default function Project() {
     const [projects, setProjects] = useState([]);
@@ -22,7 +22,7 @@ export default function Project() {
     }
 
     useEffect(() => {
-        api.get('/api/v1/project?page=1&limit=100', {
+        axios.get('/api/project?page=1&limit=100', {
             headers: {
                 Authorization: `bearer ${bearerToken}`,
             }
@@ -33,7 +33,7 @@ export default function Project() {
 
     async function handleDeleteProject(id){
         try {
-            await api.delete(`/api/v1/project/${id}`, {
+            await axios.delete(`/api/project/${id}`, {
                 headers: {
                     Authorization: `bearer ${bearerToken}`,
                 }

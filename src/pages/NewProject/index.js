@@ -5,7 +5,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 import './styles.css';
 import logoImg from '../../assets/logo.svg';
 
-import api from '../../services/api';
+import axios from 'axios';
 
 export default function NewProject() {
     const [name, setName] = useState('');
@@ -22,7 +22,7 @@ export default function NewProject() {
         };
 
         try {
-            await api.post('/api/v1/project', data, {
+            await axios.post('/api/project', data, {
                 headers: {
                     Authorization: `bearer ${bearerToken}`,
                 }

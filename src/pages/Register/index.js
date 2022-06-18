@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
-import api from '../../services/api';
+import axios from 'axios';
 import './styles.css';
 import logoImg from '../../assets/logo.svg';
 
@@ -25,7 +25,7 @@ export default function Register() {
         };
 
         try {
-            await api.post('/api/v1/user', data);
+            await axios.post('/api/user', data);
 
             alert(`You have been registered, use your user to login.`);
 

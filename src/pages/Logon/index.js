@@ -7,7 +7,7 @@ import './styles.css';
 import logoImg from '../../assets/logo.svg';
 import boltImg from '../../assets/bolt.svg';
 
-import api from '../../services/api';
+import axios from 'axios';
 
 export default function Logon() {
     const [id, setId] = useState('');
@@ -18,7 +18,7 @@ export default function Logon() {
         e.preventDefault();
 
         try {
-            const response = await api.post('/api/v1/auth/login', { "client_id": id, "client_secret": secret });
+            const response = await axios.post('/api/auth/login', { "client_id": id, "client_secret": secret });
 
             localStorage.setItem('userID', id);
             localStorage.setItem('userName', response.data.user_name)
